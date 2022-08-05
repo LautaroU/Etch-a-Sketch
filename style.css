@@ -1,0 +1,20 @@
+
+
+.newSquare {
+    background-color: yellow; 
+    
+    width: 25px; height: 25px; 
+    border-left: solid black 2px; 
+    border-bottom: solid black 2px;
+}
+
+
+
+.square{
+    background-color: red; 
+    width: 25px; 
+    height: 25px; 
+    border-left: solid black 2px; 
+    border-bottom: solid black 2px;
+    
+}
