@@ -1,20 +1,37 @@
 
-
-.newSquare {
-    background-color: yellow; 
-    
-    width: 25px; height: 25px; 
-    border-left: solid black 2px; 
-    border-bottom: solid black 2px;
+.father {
+    display: flex;
+    flex-direction: column;
 }
 
 
 
-.square{
+
+.aa{
     background-color: red; 
-    width: 25px; 
-    height: 25px; 
-    border-left: solid black 2px; 
-    border-bottom: solid black 2px;
+  
     
+    
+}
+.hijo1 {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+.hijo2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.fila {
+    display: flex;
+    justify-content:  center;
+}
+
+.cuadrado {
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
 }
