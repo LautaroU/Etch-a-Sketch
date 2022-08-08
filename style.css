@@ -17,6 +17,7 @@
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    
 }
 .hijo2 {
     display: flex;
@@ -34,4 +35,5 @@
     width: 500px;
     display: flex;
     flex-wrap: wrap;
+    border: solid black 1px;
 }
