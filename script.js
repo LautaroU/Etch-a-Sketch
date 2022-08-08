@@ -21,9 +21,44 @@ hijo1.appendChild(btnRainbow);
 btnRainbow.innerHTML = "Rainbow Mode"
 btnRainbow.setAttribute('style', 'margin-right: 20px')
 
+btnRainbow.addEventListener('click', () => {
+    
+    let numeros = prompt("Ingrese la escala de dibujo (Un numero del 1 al 100)" )
+    
+    if (numeros > 0 && numeros <= 100) {
+    let division = (500/numeros) - 2;
+    division.toString();
+
+    let cantidad = numeros*numeros;
+
+    for (i = 1; i <= cantidad; i ++ ) {
+        const pruebaDiv = document.createElement('div');
+        pruebaDiv.classList.add('aa');
+        pruebaDiv.setAttribute('style', `width:${division}px; height:${division}px; background-color:white ; border: solid gray 1px;`)
+        pruebaDiv.setAttribute('id', i);
+        cuadrado.appendChild(pruebaDiv);
+        }
+
+        const divs = document.querySelectorAll('div');
+        
+        divs.forEach((div) => div.addEventListener('mouseover', function(e){
+        e.stopPropagation();
+        const nEw = document.querySelector(`div[id="${e.target.id}"]`)
+        if(!nEw) return;
+        nEw.classList.remove('aa')
+            
+        nEw.setAttribute('style', `width:${division}px; height:${division}px; background-color:rgb(${getRandomInt(255)},${getRandomInt(255)},${getRandomInt(255)}); border: solid gray 1px;`)
+        nEw.classList.add('newSquare')
+        }))
+        }else 
+        alert("No a ingresado un numero o caracter valido");
+}, {
+    once: true
+})
+
 const btn = document.createElement('button');
 hijo1.appendChild(btn);
-btn.innerHTML = "Tamaño";
+btn.innerHTML = "Dibujar";
 btn.setAttribute('style', 'margin-left: 20px; width: 104.91px;')
 btn.addEventListener('click', () => {
     
@@ -40,12 +75,13 @@ btn.addEventListener('click', () => {
     for (i = 1; i <= cantidad; i ++ ) {
     const pruebaDiv = document.createElement('div');
     pruebaDiv.classList.add('aa');
-    pruebaDiv.setAttribute('style', `width:${division}px; height:${division}px; background-color:white; border: solid black 1px;`)
+    pruebaDiv.setAttribute('style', `width:${division}px; height:${division}px; background-color:white; border: solid gray 1px;`)
     pruebaDiv.setAttribute('id', i);
     cuadrado.appendChild(pruebaDiv);
     }
     
     const divs = document.querySelectorAll('div');
+    
     
     divs.forEach((div) => div.addEventListener('mouseover', function(e){
     e.stopPropagation();
@@ -53,7 +89,7 @@ btn.addEventListener('click', () => {
     if(!nEw) return;
     nEw.classList.remove('aa')
     
-    nEw.setAttribute('style', `width:${division}px; height:${division}px; background-color:black; border: solid black 1px;`)
+    nEw.setAttribute('style', `width:${division}px; height:${division}px; background-color:black; border: solid gray 1px;`)
     nEw.classList.add('newSquare')
     }))
     }else 
@@ -63,7 +99,9 @@ btn.addEventListener('click', () => {
 })
 
 
-
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
 
     
